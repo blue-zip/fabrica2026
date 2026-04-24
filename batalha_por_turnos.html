@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batalha_por_turno</title>
+</head>
+<body>
+    <h1>Batalha_por_turno</h1>
+
+    <div id="hp_inimigo">300</div>
+
+    <div id="hp_jogador">100</div>
+    
+    <button onclick="Abilidade_corte">Corte</button><br>
+    <div>efeito: 10 de dano</div><br>
+
+    <button onclick="Abilidade_barreira">Barreira</button><br>
+    <div>efeito: faz você tomar apenas 90% do dano do proximo ataque</div><br>
+
+    <button onclick="Abilidade_mimica">Mimica</button><br>
+    <div>imita o que o oponente acabou de fazer</div><br>
+
+    <button onclick>Restrição</button><br>
+    <div>impede o oponente de usar o movimento que acabou de usar pelos proximos 5 turnos</div><br>
+
+    <script>
+
+        let hp_jogador = 100
+        let hp_inimigo = 300
+        let dano_a_tomar_inimigo = 0
+        let dano_a_tomar_jogador = 0
+
+        function Abilidade_corte() {
+            dano_a_tomar_inimigo += 10
+        }
+
+        function Abilidade_barreira() {
+            dano_a_tomar_jogador = dano_a_tomar_jogador - (dano_a_tomar_jogador % 10)
+        }
+
+        function Abilidade_mimica() {
+
+        }
+
+        function tomar_dano_jogador() {
+            hp_jogador -= dano_a_tomar_jogador
+            dano_a_tomar_jogador = 0
+        }
+
+        function tomar_dano_inimigo() {
+            hp_inimigo -= dano_a_tomar_inimigo
+            dano_a_tomar_inimigo = 0
+        }
+
+        while (hp_jogador > 0 || hp_inimigo > 0) {
+            
+        }
+    </script>
+</body>
+</html>
